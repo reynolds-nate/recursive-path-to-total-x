@@ -15,7 +15,7 @@ def closestLevel():
 def ttlUpdate(index):
     cfg.time_to_level[index][1]+=1
     print(cfg.time_to_level[index][1])
-    cfg.time_to_level[index][2] = int(cfg.expDict[str(int(cfg.time_to_level[index][1])-1)])
+    cfg.time_to_level[index][2] = int(cfg.expDict[str(int(cfg.time_to_level[index][1]))])-int(cfg.expDict[str(int(cfg.time_to_level[index][1])-1)])
     print(cfg.time_to_level[index][2])
     cfg.time_to_level[index][3]= int(cfg.time_to_level[index][2])/cfg.skill_rate_dict[cfg.time_to_level[index][0]]
     print(cfg.time_to_level[index][3])
