@@ -11,12 +11,14 @@ def closestLevel():
             action_index=cfg.time_to_level.index(skill)
     print(action_index)    
     return action_index
-
+#todo fix here somwhere
 def ttlUpdate(index):
     cfg.time_to_level[index][1]+=1
-    cfg.time_to_level[index][2]=cfg.expDict[str(cfg.time_to_level[index][1])]
+    print(cfg.time_to_level[index][1])
+    cfg.time_to_level[index][2] = int(cfg.expDict[str(int(cfg.time_to_level[index][1])-1)])
+    print(cfg.time_to_level[index][2])
     cfg.time_to_level[index][3]= int(cfg.time_to_level[index][2])/cfg.skill_rate_dict[cfg.time_to_level[index][0]]
-
+    print(cfg.time_to_level[index][3])
 def calcPath(LevelsToGo=0):
     if LevelsToGo == 0:
         pprint(cfg.level_path)
